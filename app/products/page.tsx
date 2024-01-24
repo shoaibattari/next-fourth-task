@@ -2,14 +2,12 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import books from "../../public/books.jpg";
 import Link from "next/link";
-import { Metadata } from "next";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
 async function getData() {
-  const res = await fetch("https://simple-books-api.glitch.me/books", {
-    cache: "no-store",
-  });
+  const res = await fetch("https://simple-books-api.glitch.me/books");
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
